@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PlaySmart Original | Simon Says plus </title>
+    <!--<link rel="shortcut icon" href="TemplateData/favicon.ico">-->
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SimonSays.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+
+    <ul class="sidenav">
+      <li class="nav-item"><a href="Index.html">Home</a></li>
+      <li class="nav-item"><a href="GamePage.html">More Games</a></li>
+      <li class="nav-item"><a href="Blog.html">Blog</a></li>
+      <li class="nav-item"><a href="aboutpage.html">About Us</a></li>
+      <li class="nav-item"><a href="#">Site Map</a></li>
+    </ul>
+         
+
+    <div class="site-wrap">
+     
+      <div class = "logo" id = "logo" > <U>Simon Says +</U></div>
+      
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 800px; height: 640px">
+        </div>
+
+        <div class="footer">
+            <button type = "button" class = "collapsible" ><b> HOW TO PLAY?</b></button>
+            <div class="instruct">
+              <p>Controller Type: mouse only.</p>
+              <p>Follow the color blinking patterns! completing correct pattern gets you one point! and pressing the wrong button will get you in trouble! <br>Don't forget to share your scores with us :)</br> </p>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+   
+
+     <script src="toggletext.js"></script>
+
+  </body>
+</html>

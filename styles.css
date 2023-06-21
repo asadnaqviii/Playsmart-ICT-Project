@@ -1,0 +1,663 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sura:wght@400;700&display=swap");
+.sidebar 
+{
+    list-style: none;
+    background-color: #243444;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*hides nav behind content */
+    z-index: 0;
+    /*get rid of color gap on top of menu*/
+    margin-top: 0;
+    background-image: linear-gradient(45deg, rgba(92, 0, 104, 0.5) 15% , rgba(124, 0, 0, 0.5) 25%);
+  }
+  
+a 
+{
+    font-family: montserrat;
+    text-decoration: none;
+    color: #ffffff; /*white*/
+    transition: 0.5s;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+   
+}
+.dropdown-btn
+{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  	text-decoration: none;
+	margin-top: 65px;
+	padding: 5px;
+	font-size: 18px;
+  	color: #ffffff;
+  	display: block;
+  	border: none;
+  	background: none;
+  	width:100%;
+  	text-align: left;
+  	cursor: pointer;
+	outline: none;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+
+.dropdown-container 
+{
+	display: none;
+	padding-left: 8px;
+	font-size: 14px;
+	
+}
+
+.vertical
+{
+	list-style: square;
+	color: white;
+}
+
+.fa-caret-down {
+	float: left;
+	padding-right: 0px;	
+  } 
+
+.dropdown-btn:hover
+{
+	color: #868686;
+}
+
+
+.sidebar a:hover 
+{
+	color: #868686;
+}
+
+li.nav-item 
+{
+	margin-top: 65px;
+	padding: 5px;
+	font-size: 18px;
+}
+
+
+
+
+
+		 /*--------end of navigation styling--------*/
+  
+
+/*hide the checkbox*/
+.nav-trigger 
+{
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+  
+  label[for="nav-trigger"] 
+  {
+	/*nav stays in the same spot as user scrolls*/
+	position: fixed; 
+	/*position hamburger menu*/
+	top: 15px;
+	left: 15px;
+	/*z-index needs to be 1 higher than site-wrap*/
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	/*changing to pointer indicates interactivity*/
+	cursor: pointer;
+	color: #111111;
+  }
+  
+  /*styling to create "hamburger" icon (refer to notes)*/
+  .hidden_nav:before 
+  {
+	  content: "";
+	  position: absolute;
+	  top: 1em;
+	  width: 2em;
+	  height: .25em;
+	  border-top: .75em double rgb(255, 255, 255);
+	  border-bottom: 0.25em solid rgb(255, 255, 255);
+	  z-index: 3;
+  }
+  
+
+  .nav-trigger:checked + label 
+  {
+	left: 200px;
+  }
+  
+  /*ensures that the site-wrap is pushed to the right*/
+  /*uses general sibling selector (~) to target site wrap after nav-trigger gets activated*/
+  .nav-trigger:checked ~ .site-wrap {
+	left: 180px;
+  }
+  
+  /*add slight transition to effect*/
+  
+  .nav-trigger + label, .site-wrap {
+	transition: left 0.2s;
+  }
+
+/*
+	SIDEBAR ENDS
+
+*/
+
+/*
+	NAV BAR STARTS HERE
+*/
+.nav
+{
+    margin: 25px auto auto auto;
+    position: relative;
+    width: 592px;
+    height: 50px;
+    background-image: linear-gradient(#3e5770 75%, #2f5172 100%);
+    border-radius: 0px;
+    font-size: 0px;
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+  /* NAV BAR LINKS*/
+.nav a 
+{
+    line-height: 50px;
+    height: 100%;
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+.nav .animation 
+{
+	position: absolute;
+	height: 10%;
+	bottom: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 3px;
+}
+
+
+
+a:nth-child(1) 
+{
+	width: 100px;
+}
+nav  .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: rgb(252, 89, 84);
+	}
+
+a:nth-child(2) 
+{
+	width: 110px;
+}
+nav .start-games, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: rgb(84, 241, 252);;
+	}
+	
+a:nth-child(3) 
+{
+	width: 100px;
+}
+nav .start-health, a:nth-child(3):hover~.animation 
+{
+	width: 100px;
+	left: 210px;
+	background-color: rgb(255, 199, 96);
+}
+
+a:nth-child(4) 
+{
+	width: 140px;
+}
+nav .start-aboutus, a:nth-child(4):hover~.animation 
+{
+width: 140px;
+left: 311px;
+background-color: rgb(246, 255, 124);
+}
+
+a:nth-child(5) 
+{
+	width: 140px;
+}
+nav .start-contact, a:nth-child(5):hover~.animation 
+{
+width: 120px;
+left: 460px;
+background-color: rgb(255, 62, 255);
+}
+
+a:nth-child(6) 
+{
+	width: 100px;
+}
+nav .start-sitemap, a:nth-child(6):hover~.animation 
+{
+width: 100px;
+left: 600px;
+background-color: rgb(62, 255, 62);
+}
+
+.nav a.active 
+{
+    border-radius: 0px;
+    background-color: rgba(60, 180, 154, 0.5);
+   
+	
+}
+
+
+.orange
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    border-color: orange;
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    color: hsla(24,100%,50%,1.00);
+}
+
+/*
+
+	NAV BAR ENDS HERE
+
+*/
+
+  .site-wrap 
+  {
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 960px;
+    background-image: -webkit-linear-gradient(270deg,rgba(182,22,204,1.00) 0%,rgba(16,0,42,0.49) 0%,rgba(145,2,154,0.36) 46.61%,rgba(255,0,0,0.23) 100%,rgba(107,82,131,1.00) 100%,rgba(44,62,80,1.00) 100%), url(images/test%20images/wallpaper_800x600_935.jpg);
+    background-image: -moz-linear-gradient(270deg,rgba(182,22,204,1.00) 0%,rgba(16,0,42,0.49) 0%,rgba(145,2,154,0.36) 46.61%,rgba(255,0,0,0.23) 100%,rgba(107,82,131,1.00) 100%,rgba(44,62,80,1.00) 100%), url(images/test%20images/wallpaper_800x600_935.jpg);
+    background-image: -o-linear-gradient(270deg,rgba(182,22,204,1.00) 0%,rgba(16,0,42,0.49) 0%,rgba(145,2,154,0.36) 46.61%,rgba(255,0,0,0.23) 100%,rgba(107,82,131,1.00) 100%,rgba(44,62,80,1.00) 100%), url(images/test%20images/wallpaper_800x600_935.jpg);
+    background-image: linear-gradient(180deg,rgba(182,22,204,1.00) 0%,rgba(16,0,42,0.49) 0%,rgba(145,2,154,0.36) 46.61%,rgba(255,0,0,0.23) 100%,rgba(107,82,131,1.00) 100%,rgba(44,62,80,1.00) 100%), url(images/test%20images/wallpaper_800x600_935.jpg);
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    padding-left: 0em; /*spaces out content from hamburger*/
+    left: 0;
+    position: relative;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+
+} 
+
+
+
+
+
+body 
+{
+	overflow-x: hidden;
+}
+.logo 
+{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    text-decoration: none;
+	
+}
+
+h1
+{
+	text-underline-position: below;
+	color: #49dbff;
+	font-family: Montserrat;
+	margin-top: 25px;
+	margin-bottom: 0px;
+}
+
+h3
+{
+	
+	color: orange;
+	font-family: Montserrat;
+	font-style: italic;
+	margin-top: 25px;
+	margin-bottom: 0px;
+	font-size: 20px;
+}
+h4
+{
+	
+	font-size: 30px;
+	color: orange;
+	font-family: Sura;
+	text-align: justify;
+	margin-left:  18%;
+}
+.articlelist
+{
+	display: block;
+	list-style: square;
+	color: white;
+	margin-left: 20%;
+	
+}
+.articles
+{
+	margin-top: 3%;
+	font-size: 18px;
+}
+.articles:hover
+{
+	color: rgb(0, 0, 0);
+}
+
+
+.content 
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	padding-left: 380px;
+	padding-right: 300px;
+	transition: 0.3s;
+  
+}
+p
+{
+	
+	text-align: justify;
+	color: white;
+	font-size: 17px;
+	font-family: fantasy
+	
+}
+span
+{
+	color: lightblue;
+}
+.motto {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: small;
+    text-decoration: none;
+}
+
+
+/*Responsive Styles*/
+@media screen and (max-width : 800px){
+    /*Make dropdown links appear inline*/
+    .nav {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    .nav a {
+    width: 100%;
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    }
+}
+@media screen and (min-width: 601px) {
+	div.content {
+			
+	  font-size: 17px;
+	}
+  }
+  
+  @media screen and (max-width: 600px) {
+	div.content {
+	  font-size: 10px;
+	}
+  }
+
+
+ 
+
+  :root {
+	--size: 40vmin;
+	--space: 8vmin;
+	--duration: 300ms;
+	--ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+	--bounce-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+
+
+/*	image stuff */
+ 
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-column-gap: 0px;
+    grid-auto-flow: column;
+    place-items: center;
+    margin: 0 auto;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 2%;
+    padding: var(--space);
+    font-family: "Sura", sans-serif;
+    color: white;
+    background-color: #243444;
+    background-image: -webkit-linear-gradient(270deg,rgba(16,0,42,0.67) 0%,rgba(145,2,154,0.67) 48.19%,rgba(144,4,4,0.58) 100%), url(images/test%20images/71ffb7a0fdaee1fb3bbe312ef9ca7765.gif);
+    background-image: -moz-linear-gradient(270deg,rgba(16,0,42,0.67) 0%,rgba(145,2,154,0.67) 48.19%,rgba(144,4,4,0.58) 100%), url(images/test%20images/71ffb7a0fdaee1fb3bbe312ef9ca7765.gif);
+    background-image: -o-linear-gradient(270deg,rgba(16,0,42,0.67) 0%,rgba(145,2,154,0.67) 48.19%,rgba(144,4,4,0.58) 100%), url(images/test%20images/71ffb7a0fdaee1fb3bbe312ef9ca7765.gif);
+    background-image: linear-gradient(180deg,rgba(16,0,42,0.67) 0%,rgba(145,2,154,0.67) 48.19%,rgba(144,4,4,0.58) 100%), url(images/test%20images/71ffb7a0fdaee1fb3bbe312ef9ca7765.gif);
+	
+  }
+  
+  .promo 
+  {
+	position: relative;
+	cursor: auto;
+	width: var(--size);
+	height: var(--size);
+
+	box-shadow: -10px 10px 5px 5px rgba(128, 128, 128, 0);
+	
+}
+  
+  .image-wrapper {
+	  
+	width: var(--size);
+	height: var(--size);
+	overflow: hidden;
+	clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 0 0);
+	transition: transform var(--duration) var(--ease-out),
+	  clip-path var(--duration) var(--ease-out);
+	  
+  }
+  
+  .image-wrapper img {
+	position: absolute;
+	width: 120%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--duration) var(--ease-out);
+  }
+
+
+  .promo:hover img {
+	transform: translateX(0);
+	
+  }
+  
+  .promo:hover .image-wrapper {
+	clip-path: polygon(75% 0, 100% 50%, 75% 100%, 0 100%, 25% 50%, 0 0);
+	transform: translateX(25%);
+	transition-timing-function: var(--bounce-out);
+  }
+  
+  .title {
+	--font-size: calc(var(--size) / 8);
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 0;
+  bottom: 0;
+  font-family: "Sura", sans-serif;
+  text-transform: capitalize;
+	font-size: var(--font-size);
+	font-weight: 700;
+	line-height: 1.2;
+	white-space: nowrap;
+	transform: translate(-10%, -50%);
+	transition: transform var(--duration) var(--ease-out);
+  text-shadow: -8px 4px 6px rgba(0, 0, 0, 1);
+  }
+  
+  .title::after {
+	content: attr(data-cta);
+	display: inline-block;
+	margin-left: 1.5vmin;
+	font-size: calc(var(--font-size) / 3.25);
+	font-weight: 400;
+	letter-spacing: 0.125vmin;
+	opacity: 0;
+	transform: translateX(-25%);
+	transition: transform var(--duration) var(--ease-out),
+	  opacity var(--duration) var(--ease-out);
+  }
+  
+  .image-wrapper::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--overlay-color);
+	mix-blend-mode: multiply;
+	opacity: 0;
+	transform: translateZ(0);
+	transition: opacity var(--duration) var(--ease-out);
+  }
+  
+  .promo:hover .title {
+	transform: translate(5%, -50%);
+	transition-timing-function: var(--bounce-out);
+  }
+  
+  .promo:hover .title:after {
+	opacity: 1;
+	transform: translateX(0);
+	transition-timing-function: var(--bounce-out);
+  }
+  
+  .promo:hover .image-wrapper::after {
+	opacity: 1;
+  }
+
+
+.idk
+{
+	position: relative;
+	margin-left:20%;
+	margin-right:20%;
+	text-align: justify;
+}
+.navtext {
+    font-style: normal;
+    font-weight: 400;
+    font-family: montserrat;
+}
+.nonactive {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+.font {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+.playsmartoriginal {
+    font-family: montserrat;
+    font-style:oblique;
+    
+    font-weight: 200;
+    text-decoration: none;
+    color: hsla(0,0%,100%,1.00);
+}
+.motto {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: small;
+}
+
+.textblog {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+.space {
+    margin-left: 304px;
+}
+.mainheading {
+    color: hsla(33,100%,50%,1.00);
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+.mainpara {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+}
+.footer {
+    color: hsla(35,100%,50%,1.00);
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: small;
+}
+
+
